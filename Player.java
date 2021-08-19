@@ -1,4 +1,6 @@
 public class Player {
+    public final int CONSOLE_PENALTY = 350;
+
     private int tank_SR;
     private int dps_SR;
     private int supportSR;
@@ -13,9 +15,9 @@ public class Player {
         this.dps_SR = dps_SR;
         this.supportSR = supportSR;
         if (isConsole) {
-            this.tank_SR = tank_SR-350;
-            this.dps_SR = dps_SR-350;
-            this.supportSR = supportSR-350;
+            this.tank_SR = tank_SR-CONSOLE_PENALTY;
+            this.dps_SR = dps_SR-CONSOLE_PENALTY;
+            this.supportSR = supportSR-CONSOLE_PENALTY;
         }
 
         Main.allPlayers.add(this);

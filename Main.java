@@ -6,14 +6,8 @@ public class Main {
 
     public static void main(String args[]) {
         Player fill = new Player("fill", "fill", 0,0,0,false);
-        Player Reurkh = new Player("Grant","Reurkh",3000, 3060, 2900, false);
-        Player Anhalyk = new Player("Ethan","Anhalyk",0, 2400, 2678, false);
-        Player beastknight = new Player("Patrick","beastknight",2974, 2411, 3155, false);
-        Player IcyMinx = new Player("Brooke","IcyMinx",2774, 2083, 2554, true);
-        Player Bee = new Player("Eleanor","Bee127",0,0,2308, false);
-        Player Ace = new Player("Connor", "Ace", 1392, 1659, 1589, false);
-        Player DARTHNAGOL = new Player("Logan", "DARTHNAGOL", 2192, 0, 1985, false);
-        Player Drago = new Player("Travis", "dragoboy1000", 2213, 1930, 2040, false);
+
+        PlayerInit.initPlayers();
 
         Player[] playerRoster = {fill, fill, fill, fill, fill, fill};
 
@@ -37,6 +31,7 @@ public class Main {
                                             newTeam[4] = allPlayers.get(playerFive);
                                             for (int playerSix = 0; playerSix < allPlayers.size(); playerSix++) {
                                                 if (playerOne != playerSix && playerTwo != playerSix && playerThree != playerSix && playerFour != playerSix && playerFive != playerSix) {
+                                                    i++;
                                                     newTeam[5] = allPlayers.get(playerSix);
 
                                                     playerRoster = Teams.compareTeams(playerRoster, newTeam);
@@ -51,11 +46,7 @@ public class Main {
                 }
             }
         }
-
-        Teams.printTeam(playerRoster);
         System.out.println();
         Teams.printTeam(Teams.team);
-        System.out.println(Teams.mostSR);
-        System.out.println(i);
     }
 }
